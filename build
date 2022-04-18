@@ -2,6 +2,4 @@
 
 set -ex
 
-#rpmdev-setuptree
-#tar -czf ~/rpmbuild/SOURCES/sources.tgz .
 rpmbuild -bb --target=x86_64 --define="version lala" --build-in-place "$SPEC_FILE"
