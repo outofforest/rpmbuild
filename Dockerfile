@@ -6,4 +6,4 @@ RUN dnf install -y \
     --best \
     rpmdevtools
 
-CMD ['/bin/sh', '-c', 'rpmbuild -bb --target=x86_64 --define="version lala" --build-in-place "$SPEC_FILE"']
+CMD ./build

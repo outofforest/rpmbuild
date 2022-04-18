@@ -1,4 +1,4 @@
-name: 'RPM Build'
+name: rpm
 description: 'Builds RPM from spec file'
 
 inputs:
