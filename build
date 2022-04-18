@@ -2,7 +2,6 @@
 
 set -ex
 
-mkdir "$OUT_DIR"
 rpmbuild -bb --build-in-place --target=x86_64 \
   --define="_rpmfilename %%{NAME}-%%{VERSION}.%%{ARCH}.rpm" \
   --define="version $VERSION" \
