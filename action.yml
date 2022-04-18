@@ -3,7 +3,10 @@ description: 'Builds RPM from spec file'
 
 inputs:
   spec_file:
-    description: 'path to the spec file'
+    description: 'Path to the spec file'
+    required: true
+  version:
+    description: 'Value to set %version macro to'
     required: true
 
 outputs:
@@ -23,6 +26,7 @@ runs:
   image: 'Dockerfile'
   env:
     SPEC_FILE: ${{ inputs.spec_file }}
+    SPEC_VERSION: ${{ inputs.version }}
 
 branding:
   icon: 'package'

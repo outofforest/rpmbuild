@@ -4,5 +4,6 @@ set -ex
 
 rpmbuild -bb --build-in-place --target=x86_64 \
   --define="_rpmfilename %%{NAME}-%%{VERSION}.%%{ARCH}.rpm" \
-  --define="version lala" \
+  --define="version $VERSION" \
+  --define "_rpmdir ./release"
   "$SPEC_FILE"
