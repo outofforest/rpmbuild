@@ -15,8 +15,4 @@ RPM_PATH=`rpmspec --builtrpms --target=x86_64 \
    -q --qf "$OUT_DIR/%{name}-%{version}.%{arch}.rpm" \
   "$SPEC_FILE"`
 
-if [ "$RPM_PATH" == "" ]; then
-  exit 1
-fi
-
 echo "::set-output name=rpm_path::$RPM_PATH"

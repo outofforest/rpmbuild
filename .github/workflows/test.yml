@@ -15,10 +15,11 @@ jobs:
         with:
           persist-credentials: false
       - uses: ./
-        name: rpm
+        name: Build RPM
+        id: rpm
         with:
           spec_file: ./test/test.spec
           version: v1.0.0
           out_dir: ./release
       - run: echo ${{ steps.rpm.outputs.rpm_path }}
-        name: path
+        name: Print RPM path
