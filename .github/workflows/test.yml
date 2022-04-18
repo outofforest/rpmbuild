@@ -15,3 +15,4 @@ jobs:
       - uses: ./
         with:
           spec_file: ./test/test.spec
+          version: v1.0.0
