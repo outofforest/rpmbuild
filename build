@@ -2,7 +2,7 @@
 
 set -ex
 
-dnf builddep --spec "$SPEC_FILE"
+dnf builddep -y --spec "$SPEC_FILE"
 
 rpmbuild -bb --build-in-place --target=x86_64 \
   --define="_rpmfilename %%{NAME}-%%{VERSION}.%%{ARCH}.rpm" \
