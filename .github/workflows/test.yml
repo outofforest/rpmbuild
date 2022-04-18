@@ -16,3 +16,4 @@ jobs:
         with:
           spec_file: ./test/test.spec
           version: v1.0.0
+          out_dir: ./release

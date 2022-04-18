@@ -8,6 +8,9 @@ inputs:
   version:
     description: 'Value to set %version macro to'
     required: true
+  out_dir:
+    description: 'Directory where rpm is saved'
+    required: true
 
 outputs:
   source_rpm_path:
@@ -27,6 +30,7 @@ runs:
   env:
     SPEC_FILE: ${{ inputs.spec_file }}
     VERSION: ${{ inputs.version }}
+    OUT_DIR: ${{ inputs.out_dir }}
 
 branding:
   icon: 'package'
