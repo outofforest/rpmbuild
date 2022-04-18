@@ -26,7 +26,7 @@ runs:
   image: 'Dockerfile'
   env:
     SPEC_FILE: ${{ inputs.spec_file }}
-    VERSION: ${{ inputs.version }}
+    VERSION2: ${{ inputs.version }}
 
 branding:
   icon: 'package'
