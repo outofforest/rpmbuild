@@ -22,7 +22,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
-    SPEC_FILE: ${{ inputs.spec_file }}
+    SPEC_FILE: "lala ${{ inputs.spec_file }}"
 
 branding:
   icon: 'package'
