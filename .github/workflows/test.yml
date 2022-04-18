@@ -21,3 +21,4 @@ jobs:
           version: v1.0.0
           out_dir: ./release
       - run: echo ${{ steps.rpm.outputs.rpm_path }}
+        name: path
