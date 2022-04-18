@@ -10,4 +10,6 @@ rpmbuild -bb --build-in-place --target=x86_64 \
   --define "_rpmdir $OUT_DIR" \
   "$SPEC_FILE"
 
-rpmspec -q --qf "::set-output rpm_path=$OUT_DIR/%{name}-%{version}.%{arch}.rpm" "$SPEC_FILE"
+rpmspec --define="version $VERSION" -q --qf \
+  "::set-output rpm_path=$OUT_DIR/%{name}-%{version}.%{arch}.rpm" \
+  "$SPEC_FILE"
