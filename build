@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -ex
+
+dnf builddep -y --spec "$SPEC_FILE"
+
+rpmbuild -bb --build-in-place --target=x86_64 \
+  --define="_rpmfilename %%{NAME}-%%{VERSION}.%%{ARCH}.rpm" \
+  --define="version $VERSION" \
+  --define "_rpmdir $OUT_DIR" \
+  "$SPEC_FILE"
+
+rpmspec --builtrpms --target=x86_64 \
+  --define="version $VERSION" \
+   -q --qf "::set-output name=rpm_path::$OUT_DIR/%{name}-%{version}.%{arch}.rpm" \
+  "$SPEC_FILE"

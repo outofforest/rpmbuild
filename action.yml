@@ -1,0 +1,31 @@
+name: rpm
+description: 'Builds RPM from spec file'
+author: "Wojciech Małota-Wójcik"
+
+inputs:
+  spec_file:
+    description: 'Path to the spec file'
+    required: true
+  version:
+    description: 'Value to set %version macro to'
+    required: true
+  out_dir:
+    description: 'Directory where rpm is saved'
+    required: true
+
+outputs:
+  rpm_path:
+    description: 'Path to RPM file'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    SPEC_FILE: ${{ inputs.spec_file }}
+    VERSION: ${{ inputs.version }}
+    OUT_DIR: ${{ inputs.out_dir }}
+
+branding:
+  icon: 'package'
+  color: 'red'
+
