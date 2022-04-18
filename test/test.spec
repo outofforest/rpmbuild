@@ -3,7 +3,8 @@ Version: v0.0.1
 Release: 1
 Summary: Spec file for testing rpmbuild action
 URL:     https://github.com/outofforest/rpmbuild
-LICENSE: MIT
+License: MIT
+Source0: sources.tgz
 
 %description
 Spec file for testing rpmbuild action

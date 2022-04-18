@@ -2,6 +2,6 @@
 
 set -ex
 
-rpmdev-setuptree
-tar -czf ~/rpmbuild/SOURCES/sources.tgz .
-rpmbuild -bb "$SPEC_FILE"
+#rpmdev-setuptree
+#tar -czf ~/rpmbuild/SOURCES/sources.tgz .
+rpmbuild -bb --build-in-place "$SPEC_FILE"
