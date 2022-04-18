@@ -2,4 +2,7 @@
 
 set -ex
 
-rpmbuild -bb --target=x86_64 --define="version lala" --build-in-place "$SPEC_FILE"
+rpmbuild -bb --build-in-place --target=x86_64 \
+  --define="_rpmfilename %%{NAME}-%%{VERSION}.%%{ARCH}.rpm" \
+  --define="version lala" \
+  "$SPEC_FILE"
