@@ -22,7 +22,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
-    SPEC_FILE: ${{ github.event.inputs.spec_file }}
+    SPEC_FILE: ${{ inputs.spec_file }}
 
 branding:
   icon: 'package'
